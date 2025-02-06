@@ -1,4 +1,10 @@
 
+.header {
+  font-family: 'Jacquard 12';
+  font-size: 52px;
+  text-align: center;
+}
+
 .App {
   margin-left: 2%;
   margin-right: 2%;

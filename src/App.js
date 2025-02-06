@@ -9,10 +9,14 @@ function App() {
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=UnifrakturMaguntia" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jacquard 12" />
       </head>
-      <header className="">
-        
+      <header>
+
       </header>
       <body className="App-body">
+        <audio autoPlay loop>
+          <source src="/audio/background_audio.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
         <h1>Izotope Games Character Generator</h1>
         <div className="Generator-div">
           <a href="https://substack.com/@izotopegames?utm_source=user-menu">Link to Izotop Games</a>
