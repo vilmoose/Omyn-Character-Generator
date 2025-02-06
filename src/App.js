@@ -14,7 +14,25 @@ function App() {
       </header>
       <body className="App-body">
         <h1>Izotope Games Character Generator</h1>
-        <a href="https://substack.com/@izotopegames?utm_source=user-menu">Link to Izotop Games</a>
+        <div className="Generator-div">
+          <a href="https://substack.com/@izotopegames?utm_source=user-menu">Link to Izotop Games</a>
+          <br/>
+          <button>Generate</button>
+          <button>Help</button>
+          <p>
+            This is where the generator button and help button will be.
+          </p>
+        </div>
+        <div className="List-div">
+          <p>
+            This is where generated characters will go in separate boxes.
+            Will need to implement a list.
+          </p>
+          <ol>
+            <li>Character 1</li>
+            <li>Character 2</li>
+          </ol>
+        </div>
       </body>
 
     </div>

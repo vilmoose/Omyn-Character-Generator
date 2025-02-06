@@ -27,6 +27,28 @@
   color: brown;
 }
 
+.App-body ol {
+  background-color: white;
+}
+/*The division where buttons will be located */
+.Generator-div {
+  background-color: blue;
+  text-align: center;
+
+}
+
+.Generator-div button {
+  padding: 4px;
+  margin-right: 10px;
+  background-color: beige;
+}
+
+/*The division where buttons will be located */
+.List-div {
+  background-color: yellow;
+  text-align: center;
+}
+
 /* Style of text 1 */
 .text1 {
   font-family: 'UnifrakturMaguntia';
