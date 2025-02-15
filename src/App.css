@@ -5,52 +5,62 @@
   text-align: center;
 }
 
-.App {
-  margin-left: 2%;
-  margin-right: 2%;
-  padding-top: 10px;
-  float: left;
-  background-color: brown;
-}
-
 .App-head {
   font-family: 'Jacquard 12';
-  font-size: 52px;
   text-align: center;
 }
 
 .App-body {
   font-family: 'Jacquard 12';
   text-align: center;
+  background-color: rgb(66, 26, 26);
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 10px;
+  
 }
 
 .App-body h1 {
-  font-size: 52px;
-}
-
-.App-body a {
-  font-size: 32px;
-  color: brown;
+  font-size: 82px;
 }
 
 .App-body ol {
   background-color: white;
 }
-/*The division where buttons will be located */
-.Generator-div {
-  background-color: blue;
-  text-align: center;
 
+/*The division where buttons will be located */
+.mid-div {
+  text-align: center;
+  font-size: 48px;
+  color: black;
 }
 
-.Generator-div button {
+.mid-div a:hover{
+  font-size: 48px;
+  color: yellow;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+.mid-div button {
   padding: 4px;
   margin-right: 10px;
-  background-color: beige;
+  font-size: 48px;
+  font-family: 'Jacquard 12';
+  background-color: blue;
+  width: 100%;
+  border-radius: 10px;
 }
 
-/*The division where buttons will be located */
-.List-div {
+.mid-div button:hover{
+  padding: 4px;
+  margin-right: 10px;
+  background-color: yellow;
+  animation: blink 1s infinite; 
+}
+
+/*The division where generated caharacters will be located */
+.bottom-div {
   background-color: yellow;
   text-align: center;
 }
@@ -67,4 +77,24 @@
   font-family: 'Jacquard 12';
   font-size: 52px;
   text-align: center;
+}
+
+.blinking-text {
+  font-family: 'Jacquard 12';
+  font-size: 52px;
+  text-align: center;
+  color: green;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
