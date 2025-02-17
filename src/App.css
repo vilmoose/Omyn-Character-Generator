@@ -1,68 +1,76 @@
-
-.header {
-  font-family: 'Jacquard 12';
-  font-size: 52px;
-  text-align: center;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  image-rendering: pixelated;
+  background-image: url("/public/images/background_img.jpg");
+  background-size: 100% 100%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-color: rgb(66, 26, 26); /* Change to your desired color */
 }
 
-.App-head {
-  font-family: 'Jacquard 12';
+
+.App {
   text-align: center;
+  display: contents;
 }
 
 .App-body {
   font-family: 'Jacquard 12';
+  font-size: 54px;
+  color: rgb(65, 241, 212);
+  text-shadow: 2px 2px 3px rgb(7, 7, 7);
   text-align: center;
-  background-color: rgb(66, 26, 26);
+  text-decoration: none;
   margin-left: 2%;
   margin-right: 2%;
   padding-top: 10px;
-  
 }
 
 .App-body h1 {
   font-size: 82px;
 }
 
-.App-body ol {
-  background-color: white;
-}
-
-/*The division where buttons will be located */
-.mid-div {
-  text-align: center;
-  font-size: 48px;
-  color: black;
-}
-
-.mid-div a:hover{
-  font-size: 48px;
+.App-body h1:hover {
+  cursor: none;
   color: yellow;
-  text-align: center;
   animation: blink 1s infinite;
 }
 
-.mid-div button {
-  padding: 4px;
-  margin-right: 10px;
-  font-size: 48px;
-  font-family: 'Jacquard 12';
-  background-color: blue;
-  width: 100%;
-  border-radius: 10px;
+.App-body a{
+  text-decoration: none;
+  color: rgb(65, 241, 212);   
 }
 
-.mid-div button:hover{
-  padding: 4px;
-  margin-right: 10px;
-  background-color: yellow;
+.App-body a:hover{
+  color: yellow;
+  animation: blink 1s infinite;
+}
+
+.App-body button {
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 54px;
+  font-family: 'Jacquard 12';
+  width: 25%;
+  cursor: pointer;
+  color: rgb(65, 241, 212);   
+  text-shadow: 2px 2px 3px rgb(7, 7, 7);  
+}
+
+.App-body button:hover{
+  color: yellow;
   animation: blink 1s infinite; 
 }
 
-/*The division where generated caharacters will be located */
-.bottom-div {
-  background-color: yellow;
+.App-body p{
   text-align: center;
+  font-size: 36px;
 }
 
 /* Style of text 1 */
@@ -81,9 +89,9 @@
 
 .blinking-text {
   font-family: 'Jacquard 12';
-  font-size: 52px;
+  font-size: 82px;
   text-align: center;
-  color: green;
+  color: yellow;
   animation: blink 1s infinite;
 }
 
