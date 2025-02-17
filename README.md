@@ -4,6 +4,6 @@ Izotope Games Character Generator
 
 Credits:
     -vilmoose (author of the website)
-    -Izik (Dungeon Master and Owner of Izotope Games)
-    -Rene (Music)
+    -Izotope (Dungeon Master and Owner of Izotope Games)
+    - (Music)
 
