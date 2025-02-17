@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const SHEET_ID = "1YLn9aOiytAI-JqImI81CX0Y0fd3LliMc_xx2xl1xbiA";
-const API_KEY = "AIzaSyALKCzAQ875PbxrjkubVz1li2bvHthsq-M";
+const SHEET_ID = process.env.REACT_APP_SHEET_ID;
+const API_KEY = process.env.REACT_APP_API_KEY;
 const RANGE = "Sheet1!A2:D";
 
 function getRandomElement(arr) {
@@ -14,8 +14,8 @@ export default function CharacterGenerator(){
 
     useEffect(() => {
         async function fetchData(){
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/1YLn9aOiytAI-JqImI81CX0Y0fd3LliMc_xx2xl1xbiA/values/Sheet1!A2:D?key=AIzaSyALKCzAQ875PbxrjkubVz1li2bvHthsq-M`;
-
+            /* const url = `https://sheets.googleapis.com/v4/spreadsheets/1YLn9aOiytAI-JqImI81CX0Y0fd3LliMc_xx2xl1xbiA/values/Sheet1!A2:D?key=AIzaSyALKCzAQ875PbxrjkubVz1li2bvHthsq-M`; */
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
             const response = await fetch(url);
             const result = await response.json();
 
