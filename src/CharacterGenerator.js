@@ -11,6 +11,7 @@ function getRandomElement(arr) {
 export default function CharacterGenerator(){
     const [data, setData] = useState({ firstNames: [], lastNames: [], motivations: [], items: [] });
     const[character, setCharacter] = useState(null);
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
 
     useEffect(() => {
         async function fetchData(){
@@ -32,6 +33,7 @@ export default function CharacterGenerator(){
         fetchData();
     },[]);
 
+    /**Generates a character with values from the google spreadsheet */
     function generateCharacter() {
         if (data.firstNames.length > 0) {
             setCharacter({
@@ -40,9 +42,21 @@ export default function CharacterGenerator(){
                 motivation: getRandomElement(data.motivations),
                 item: getRandomElement(data.items),
             });
+            setIsHelpOpen(false);
         } else {
             console.warn("Data not loaded");
         }
+    }
+
+    /**Opens the help popup */
+    function helpUser() {
+        setIsHelpOpen(true); 
+        setCharacter(null);
+    }
+
+    /**Closes the help popup */
+    function closeHelp() {
+        setIsHelpOpen(false); 
     }
 
     return (
@@ -57,17 +71,27 @@ export default function CharacterGenerator(){
                     <h1> Omyn Character Generator</h1>
                     <div>
                         <button onClick={generateCharacter}>Render your likeness</button>
-                        <p>*</p>
+                        <br></br>
                         <a href="https://substack.com/@izotopegames?utm_source=user-menu">Izotope Games Substack</a>
                         <br/>
-                        <button>Help</button>
+                        <button onClick={helpUser}>Help</button>
                     </div>
                     <div className="bottom-div">
-                        {character && (
+                        {!isHelpOpen && character && (
                             <div>
                                 <p><strong>Name:</strong> {character.firstName} {character.lastName}</p>
                                 <p><strong>Motivation:</strong> {character.motivation}</p>
                                 <p><strong>Item:</strong> {character.item}</p>
+                            </div>
+                        )}
+
+                        {isHelpOpen && (
+                            <div className="Popup">
+                                <div className="Popup-content">
+                                    <p>How to use the website</p>
+                                    <p>Click "Render your likeness" to generate a random character. Each character has a name, motivation, and a special item.</p>
+                                    <button onClick={closeHelp}>Close</button>
+                                </div>
                             </div>
                         )}
                     </div>

@@ -49,7 +49,7 @@ html, body {
 
 .App-body h1 {
   font-size: 72px;
-  margin-bottom: 10;
+  margin-top: 10px;
   padding-bottom: 25px;
 }
 
@@ -92,7 +92,43 @@ html, body {
   font-size: 32px;
 }
 
-.blinking-text {
+.Popup {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Popup-content {
+  font-family: 'Grenze Gotisch';
+  font-size: 44px;
+  font-weight:100;
+  color: rgb(225, 240, 89);
+}
+
+.Popup-content button {
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 34px;
+  font-family: 'Grenze Gotisch';
+  cursor: pointer;
+  color: rgb(225, 240, 89);   
+  text-shadow: 2px 2px 3px rgb(7, 7, 7);  
+}
+
+.Popup-content button:hover {
+  color: rgb(241, 0, 0);
+  animation: blink 1s infinite; 
+}
+
+.Blinking-text {
   font-family: 'Grenze Gotisch';
   font-size: 82px;
   text-align: center;
