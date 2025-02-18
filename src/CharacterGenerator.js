@@ -14,7 +14,6 @@ export default function CharacterGenerator(){
 
     useEffect(() => {
         async function fetchData(){
-            /* const url = `https://sheets.googleapis.com/v4/spreadsheets/1YLn9aOiytAI-JqImI81CX0Y0fd3LliMc_xx2xl1xbiA/values/Sheet1!A2:D?key=AIzaSyALKCzAQ875PbxrjkubVz1li2bvHthsq-M`; */
             const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
             const response = await fetch(url);
             const result = await response.json();
@@ -47,37 +46,32 @@ export default function CharacterGenerator(){
     }
 
     return (
-
         <div className="App">
-            <div className="App-head">
-                <title>IG Character Generator</title>
-                <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=UnifrakturMaguntia" />
-                <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jacquard 12" />
-            </div>
-    
-            <div className="App-body">
-                <audio autoPlay loop>
-                    <source src="/audio/background_audio.wav" type="audio/wav" />
-                    Your browser does not support the audio element.
-                </audio>
-                <h1> Izotope Games Character Generator</h1>
-                <div>
-                    <button onClick={generateCharacter}>Generate Character</button>
-                    <br/>
-                    <a href="https://substack.com/@izotopegames?utm_source=user-menu">Izotope Games Substack</a>
-                    <br/>
-                    <button>Help</button>
+            <title>Omyn Character Generator</title>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Grenze Gotisch" />
+                <div className="App-body">
+                    <audio autoPlay loop>
+                        <source src="/audio/background_audio.wav" type="audio/wav" />
+                        Your browser does not support the audio element.
+                    </audio>
+                    <h1> Omyn Character Generator</h1>
+                    <div>
+                        <button onClick={generateCharacter}>Render your likeness</button>
+                        <p>*</p>
+                        <a href="https://substack.com/@izotopegames?utm_source=user-menu">Izotope Games Substack</a>
+                        <br/>
+                        <button>Help</button>
+                    </div>
+                    <div className="bottom-div">
+                        {character && (
+                            <div>
+                                <p><strong>Name:</strong> {character.firstName} {character.lastName}</p>
+                                <p><strong>Motivation:</strong> {character.motivation}</p>
+                                <p><strong>Item:</strong> {character.item}</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
-                <div className="bottom-div">
-                    {character && (
-                        <div>
-                            <p><strong>Name:</strong> {character.firstName} {character.lastName}</p>
-                            <p><strong>Motivation:</strong> {character.motivation}</p>
-                            <p><strong>Item:</strong> {character.item}</p>
-                        </div>
-                    )}
-                </div>
-            </div>
         </div>
       );
 }

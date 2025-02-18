@@ -2,25 +2,43 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  image-rendering: pixelated;
-  background-image: url("/public/images/background_img.jpg");
-  background-size: 100% 100%; 
+  background-image: url("/public/images/background2.jpg");
+  background-size: 50% 100%; 
   background-position: center; 
   background-repeat: no-repeat; 
   background-attachment: fixed; 
-  background-color: rgb(66, 26, 26); /* Change to your desired color */
+  background-color: black;
 }
 
-
-.App {
-  text-align: center;
+.App{
   display: contents;
 }
 
+.App table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.App table td {
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.App-side {
+  width: 25%;
+  color: white;
+}
+
+.App-middle{
+  width: 50%;
+}
+
 .App-body {
-  font-family: 'Jacquard 12';
-  font-size: 54px;
-  color: rgb(65, 241, 212);
+  font-family: 'Grenze Gotisch';
+  font-size: 44px;
+  font-weight:100;
+  color: rgb(225, 240, 89);
   text-shadow: 2px 2px 3px rgb(7, 7, 7);
   text-align: center;
   text-decoration: none;
@@ -30,22 +48,24 @@ html, body {
 }
 
 .App-body h1 {
-  font-size: 82px;
+  font-size: 72px;
+  margin-bottom: 10;
+  padding-bottom: 25px;
 }
 
 .App-body h1:hover {
   cursor: none;
-  color: yellow;
+  color: rgb(241, 0, 0);
   animation: blink 1s infinite;
 }
 
 .App-body a{
   text-decoration: none;
-  color: rgb(65, 241, 212);   
+  color: rgb(225, 240, 89);  
 }
 
 .App-body a:hover{
-  color: yellow;
+  color: rgb(241, 0, 0);
   animation: blink 1s infinite;
 }
 
@@ -55,40 +75,25 @@ html, body {
   margin: 0;
   background: none;
   border: none;
-  font-size: 54px;
-  font-family: 'Jacquard 12';
-  width: 25%;
+  font-size: 44px;
+  font-family: 'Grenze Gotisch';
   cursor: pointer;
-  color: rgb(65, 241, 212);   
+  color: rgb(225, 240, 89);   
   text-shadow: 2px 2px 3px rgb(7, 7, 7);  
 }
 
 .App-body button:hover{
-  color: yellow;
+  color: rgb(241, 0, 0);
   animation: blink 1s infinite; 
 }
 
 .App-body p{
   text-align: center;
-  font-size: 36px;
-}
-
-/* Style of text 1 */
-.text1 {
-  font-family: 'UnifrakturMaguntia';
-  font-size: 52px;
-  text-align: center;
-}
-
-/* Style of text 2 */
-.text2 {
-  font-family: 'Jacquard 12';
-  font-size: 52px;
-  text-align: center;
+  font-size: 32px;
 }
 
 .blinking-text {
-  font-family: 'Jacquard 12';
+  font-family: 'Grenze Gotisch';
   font-size: 82px;
   text-align: center;
   color: yellow;
