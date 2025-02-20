@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  margin-left: 40px;
   padding: 0;
   background-image: url("/public/images/background2.jpg");
   background-size: 50% 100%; 
@@ -39,7 +40,7 @@ html, body {
   font-size: 44px;
   font-weight:100;
   color: rgb(225, 240, 89);
-  text-shadow: 2px 2px 3px rgb(7, 7, 7);
+  text-shadow: 5px 5px 5px black, 2px 2px 5px rgb(0, 0, 0);
   text-align: center;
   text-decoration: none;
   margin-left: 2%;
@@ -52,6 +53,8 @@ html, body {
   margin-top: 10px;
   padding-bottom: 25px;
 }
+
+
 
 .App-body h1:hover {
   cursor: none;
@@ -79,7 +82,7 @@ html, body {
   font-family: 'Grenze Gotisch';
   cursor: pointer;
   color: rgb(225, 240, 89);   
-  text-shadow: 2px 2px 3px rgb(7, 7, 7);  
+  text-shadow: 5px 5px 5px black, 2px 2px 5px rgb(0, 0, 0); 
 }
 
 .App-body button:hover{
@@ -126,6 +129,36 @@ html, body {
 .Popup-content button:hover {
   color: rgb(241, 0, 0);
   animation: blink 1s infinite; 
+}
+
+.Character-history h1 {
+  font-size: 56px;
+}
+
+.Character-history {
+  width: 80%; 
+  max-height: 300px; 
+  overflow-y: auto; 
+  border: 2px solid #26492c71; 
+  background-image: url("/public/images/scroll-background.png");
+  padding: 10px; 
+  margin: 20px auto; 
+  margin-top: 250px;
+  border-radius: 8px; 
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+  color: black;
+  text-shadow: 1px 1px 2px white, 2px 2px 5px red;
+}
+
+.History {
+  border-bottom: 1px solid rgb(225, 240, 89);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.History p{
+  margin: 2px 0;
+  padding: 0;
 }
 
 .Blinking-text {

@@ -12,8 +12,10 @@ export default function CharacterGenerator(){
     const [data, setData] = useState({ firstNames: [], lastNames: [], motivations: [], items: [] });
     const[character, setCharacter] = useState(null);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [characterHistory, setCharacterHistory] = useState([]);
 
     useEffect(() => {
+        /**Get character data from the google spreadsheet */
         async function fetchData(){
             const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
             const response = await fetch(url);
@@ -33,16 +35,21 @@ export default function CharacterGenerator(){
         fetchData();
     },[]);
 
-    /**Generates a character with values from the google spreadsheet */
+    /**Generates a character with values from the google spreadsheet, and adds it to the array of characters */
     function generateCharacter() {
         if (data.firstNames.length > 0) {
-            setCharacter({
+            const newCharacter = {
                 firstName: getRandomElement(data.firstNames),
                 lastName: getRandomElement(data.lastNames),
                 motivation: getRandomElement(data.motivations),
                 item: getRandomElement(data.items),
-            });
-            setIsHelpOpen(false);
+            };
+
+            setCharacter(newCharacter);
+            setCharacterHistory(prevHistory => [newCharacter, ...prevHistory]);
+            if(isHelpOpen){
+                setIsHelpOpen(false);
+            }
         } else {
             console.warn("Data not loaded");
         }
@@ -76,7 +83,7 @@ export default function CharacterGenerator(){
                         <br/>
                         <button onClick={helpUser}>Help</button>
                     </div>
-                    <div className="bottom-div">
+                    <div>
                         {!isHelpOpen && character && (
                             <div>
                                 <p><strong>Name:</strong> {character.firstName} {character.lastName}</p>
@@ -90,10 +97,26 @@ export default function CharacterGenerator(){
                                 <div className="Popup-content">
                                     <p>How to use the website</p>
                                     <p>Click "Render your likeness" to generate a random character. Each character has a name, motivation, and a special item.</p>
+                                    <p>Scroll to the bottom of the page for previously generated characters.</p>
                                     <button onClick={closeHelp}>Close</button>
                                 </div>
                             </div>
                         )}
+
+                        <div className="Character-history">
+                            <h1>Scrolls of past souls</h1>
+                            {characterHistory.length > 0 ? (
+                                characterHistory.map((character, index) => (
+                                    <div key={index} className="History">
+                                        <p><strong>Name:</strong> {character.firstName} {character.lastName}</p>
+                                        <p><strong>Motivation:</strong> {character.motivation}</p>
+                                        <p><strong>Item:</strong> {character.item}</p>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>The scrolls are empty...</p>
+                            )}
+                        </div>
                     </div>
                 </div>
         </div>
