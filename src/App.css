@@ -1,16 +1,10 @@
+/* Styling for entire page */
 html, body {
-  height: 100%;
-  margin: 0;
-  margin-left: 40px;
-  padding: 0;
-  background-image: url("/public/images/background2.jpg");
-  background-size: 50% 100%; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
   background-color: black;
+  padding: 0;
 }
 
+/* Styling for the App */
 .App{
   display: contents;
 }
@@ -35,7 +29,18 @@ html, body {
   width: 50%;
 }
 
+/* Styling for the body/middle section of the page */
 .App-body {
+  margin: 0;
+  margin-left: 50px;
+  padding-top: 10px;
+  padding: 0;
+  background-image: url("/public/images/background.jpg");
+  background-size: 50% 100%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-color: black;
   font-family: 'Grenze Gotisch';
   font-size: 44px;
   font-weight:100;
@@ -43,9 +48,6 @@ html, body {
   text-shadow: 5px 5px 5px black, 2px 2px 5px rgb(0, 0, 0);
   text-align: center;
   text-decoration: none;
-  margin-left: 2%;
-  margin-right: 2%;
-  padding-top: 10px;
 }
 
 .App-body h1 {
@@ -53,8 +55,6 @@ html, body {
   margin-top: 10px;
   padding-bottom: 25px;
 }
-
-
 
 .App-body h1:hover {
   cursor: none;
@@ -75,7 +75,8 @@ html, body {
 .App-body button {
   text-align: center; 
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: none;
   border: none;
   font-size: 44px;
@@ -95,6 +96,7 @@ html, body {
   font-size: 32px;
 }
 
+/* Styling for help popup */
 .Popup {
   top: 0;
   left: 0;
@@ -131,6 +133,7 @@ html, body {
   animation: blink 1s infinite; 
 }
 
+/* Styling for the previously generated characters */
 .Character-history h1 {
   font-size: 56px;
 }
@@ -151,7 +154,8 @@ html, body {
 }
 
 .History {
-  border-bottom: 1px solid rgb(225, 240, 89);
+  border: 5px solid rgb(0, 0, 0);
+  border-style:  double;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -159,8 +163,32 @@ html, body {
 .History p{
   margin: 2px 0;
   padding: 0;
+  font-size: 30px;
 }
 
+/* Styling for the easter egg */
+.easterEgg {
+  padding: 0;
+  margin: 0;
+}
+
+.easterEgg button {
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+  margin-top: 400px;
+  margin-left: 300px;
+  background: none;
+  border: none;
+  height: 5%;
+  width: 5%;
+  font-size: 10px;
+  font-family: 'Grenze Gotisch';
+  cursor: pointer;
+  color: rgb(24, 8, 8);   
+}
+
+/* Styling for blinking text */
 .Blinking-text {
   font-family: 'Grenze Gotisch';
   font-size: 82px;

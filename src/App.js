@@ -9,7 +9,6 @@ function App() {
       <table>
         <tr>
           <td className="App-side">
-            <Sidebars />
           </td>
           <td className="App-middle">
             <CharacterGenerator />
